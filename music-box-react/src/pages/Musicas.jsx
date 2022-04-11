@@ -39,6 +39,7 @@ function Musicas() {
                                 genero={musica.categoria}
                                 ano={musica.ano}
                                 id={musica.id}
+                                key={musica.id}
                             />
                         ))
                     }
