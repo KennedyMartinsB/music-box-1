@@ -38,6 +38,7 @@ function Musicas() {
                                 artista={musica.artista}
                                 genero={musica.categoria}
                                 ano={musica.ano}
+                                imagem={musica.imagem}
                                 id={musica.id}
                                 key={musica.id}
                             />
