@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Menu from "../components/Menu";
+import imgLateral from '../html-css-template/imagens/half-circles-pink-blue.png';
+
+
 
 function Add() {
+
+    const [musicaInput, setMusicaInput] = useState("");
+    const [artistaInput, setArtistaInput] = useState("");
+    const [generoInput, setGeneroInput] = useState("");
+    const [anoInput, setAnoInput] = useState("");
+    const [imageInput, setImageInput] = useState("");
+
+
+    function cadastrar(e) {
+        e.preventDefault();
+        console.log(musicaInput)
+    }
+
     return (
         <>
-            <Menu/>
+            <Menu />
             <div className="container">
                 <div className="add-music">
 
@@ -14,24 +30,24 @@ function Add() {
 
                         <br />
 
-                        <form>
-                            <label>Música: <br /><input type="text" /></label>
+                        <form onSubmit={cadastrar}>
+                            <label>Música: <br /><input type="text" value={musicaInput} onChange={e => setMusicaInput(e.target.value)} /></label>
                             <br />
-                            <label>Artista: <br /><input type="text" /></label>
+                            <label>Artista: <br /><input type="text" value={artistaInput} onChange={e => setArtistaInput(e.target.value)} /></label>
                             <br />
-                            <label>Genêro: <br /><input type="text" /></label>
+                            <label>Genêro: <br /><input type="text" value={generoInput} onChange={e => setGeneroInput(e.target.value)} /></label>
                             <br />
-                            <label>Ano de Lançamento: <br /><input type="text" /></label>
+                            <label>Ano de Lançamento: <br /><input type="text" value={anoInput} onChange={e => setAnoInput(e.target.value)} /></label>
                             <br />
-                            <label> Imagem (url): <br /><input type="text" /></label>
+                            <label> Imagem (url): <br /><input type="text" value={imageInput} onChange={e => setImageInput(e.target.value)} /></label>
                             <br />
-                            <button className="btn">Enviar</button>
+                            <button className="btn" type="submit">Enviar</button>
 
                         </form>
                     </div>
 
                     <div className="img-lateral">
-                        <img src="../imagens/half-circles-pink-blue.png" alt="" />
+                        <img src={imgLateral} alt="" />
                     </div>
 
                 </div>
